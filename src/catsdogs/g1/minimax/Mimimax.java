@@ -2,6 +2,8 @@ package catsdogs.g1.minimax;
 
 import java.util.ArrayList;
 
+import org.apache.log4j.Logger;
+
 import catsdogs.g1.CatPlayer;
 import catsdogs.g1.DogPlayer;
 import catsdogs.g1.Evaluator;
@@ -12,7 +14,8 @@ import catsdogs.sim.Move;
 import catsdogs.sim.PossibleMove;
 
 public class Mimimax extends Evaluator {
-	private static PossibleMove USELESS_POSSIBLE_MOVE = new PossibleMove(0,0,Integer.MIN_VALUE,null);
+        private Logger logger = Logger.getLogger(this.getClass()); // for logging
+        private static PossibleMove USELESS_POSSIBLE_MOVE = new PossibleMove(0,0,Integer.MIN_VALUE,null);
 	//Make 3 players Cat DOg1 dog2.
 
 	public Mimimax(CatPlayer cat, DogPlayer dog) {
@@ -77,8 +80,9 @@ public class Mimimax extends Evaluator {
 		
 		for (PossibleMove possibleMove : getMoves(board, player)) {
 			PossibleMoveWithScore tmpMove = evaluate(possibleMove.getBoard(), nextPlayer(player), depth);
-			if (bestMove == null || tmpMove.getScore() > bestMove.getScore()) {
-				bestMove = new PossibleMoveWithScore(possibleMove, tmpMove.getScore());
+			if (bestMove == null || tmpMove.getScore() > bestMove.getScore()) {			
+			        bestMove = new PossibleMoveWithScore(possibleMove, tmpMove.getScore());
+			        logger.info("current best move is " + bestMove);
 			}
 		}
 		
@@ -91,7 +95,7 @@ public class Mimimax extends Evaluator {
 		for (PossibleMove possibleMove : getMoves(board, player)) {
 			PossibleMoveWithScore tmpMove = evaluate(possibleMove.getBoard(), player, depth);
 			if (worstMove == null || tmpMove.getScore() < worstMove.getScore()) {
-				worstMove = new PossibleMoveWithScore(possibleMove, tmpMove.getScore());;
+				worstMove = new PossibleMoveWithScore(possibleMove, tmpMove.getScore());
 			}
 		}
 		

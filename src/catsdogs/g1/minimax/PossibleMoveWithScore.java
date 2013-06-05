@@ -13,4 +13,9 @@ public class PossibleMoveWithScore extends PossibleMove {
 	public int getScore() {
 		return score;
 	}
+	
+	@Override 
+	public String toString() {
+	    return "(" + this.getX() + "," + this.getY() +"). Heading  " + this.getDirection() + " with a score of " + this.score + ".";
+	}
 }

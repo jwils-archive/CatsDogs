@@ -4,7 +4,7 @@
 <properties>
 	<comment>A sample configuration file.</comment>
 	
-<entry key="catsdogs.cat">catsdogs.g0.RandomCatPlayer catsdogs.g1.Group1Cat </entry>
+<entry key="catsdogs.cat">catsdogs.g1.Group1Cat catsdogs.g0.RandomCatPlayer</entry>
 
 <entry key="catsdogs.dog">catsdogs.g0.RandomDogPlayer</entry>
 	
