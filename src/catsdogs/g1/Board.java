@@ -2,7 +2,7 @@ package catsdogs.g1;
 
 public class Board {
     private int[][] board;
-    Board(int[][] board){
+    public Board(int[][] board){
         setBoard(board);
     }
     public int[][] getBoard() {
@@ -13,4 +13,11 @@ public class Board {
         this.board = board;
     }
 
+    public int hashCode() {
+    	return 0;
+    }
+    
+    public boolean equals(Object obj) {
+		return false;
+    }
 }
