@@ -91,16 +91,19 @@ public class Board {
     
     public static void main(String[] args) {
     	int[][] testArray = new int[][]{
-    			{0,1,0,0,1,0,0},
-    			{0,0,2,2,0,1,0},
-    			{0,2,0,0,2,0,0},
-    			{0,1,0,2,0,0,0},
-    			{0,0,0,1,0,1,0},
-    			{1,0,0,0,1,0,2},
-    			{2,1,0,0,0,0,1}};
+    			{2,2,2,2,2,2,2},
+    			{2,2,2,2,2,2,2},
+    			{2,2,2,2,2,2,2},
+    			{2,2,2,2,2,2,2},
+    			{2,2,2,2,2,2,2},
+    			{2,2,2,2,2,2,2},
+    			{2,2,2,2,2,2,2}
+    	};
     	printBoard(testArray);
     			
     	printBoard(testArray);
+    	
+    	System.out.println(Integer.MAX_VALUE);
     	
     	System.out.println(new Board(testArray).hashCode());
     	testArray = rotateCW(testArray);
