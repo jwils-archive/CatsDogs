@@ -129,4 +129,16 @@ public class Board {
     	}
     	System.out.println();
     }
+
+    private static boolean boardsEqual(int [][] thisBoard, int [][] thatBoard) {
+        for (int i = 0; i < thisBoard.length; i++) {
+            for (int j = 0; j < thisBoard[0].length; j++) {
+                if (thisBoard[i][j] != thatBoard[i][j]){
+                    return false;
+                }
+            }
+        }
+        return true;
+
+    }
 }
