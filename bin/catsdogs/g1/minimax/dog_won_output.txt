@@ -1,0 +1,166 @@
+HI 0    [AWT-EventQueue-0] INFO  catsdogs.sim.GameController  - New game!
+HI 2    [AWT-EventQueue-0] INFO  catsdogs.g0.RandomDogPlayer  - Dog player starting new game!
+HI 597  [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (0,0). Heading  2 with a score of 0.
+HI 609  [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 0, 0 trying to move 2
+HI 641  [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 1, 0 trying to move 3
+HI 672  [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 2, 0 trying to move 3
+HI 705  [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (0,1). Heading  0 with a score of 0.
+HI 745  [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 0, 1 trying to move 0
+HI 776  [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 1, 1 trying to move 3
+HI 807  [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 3, 0 trying to move 3
+HI 840  [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (0,0). Heading  2 with a score of 0.
+HI 913  [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 0, 0 trying to move 2
+HI 944  [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 1, 2 trying to move 0
+HI 975  [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 1, 1 trying to move 2
+HI 1009 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (0,1). Heading  2 with a score of 0.
+HI 1095 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 0, 1 trying to move 2
+HI 1126 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 3, 1 trying to move 0
+HI 1157 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 2, 1 trying to move 1
+HI 1192 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (0,2). Heading  2 with a score of 0.
+HI 1256 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 0, 2 trying to move 2
+HI 1288 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 1, 0 trying to move 3
+HI 1319 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 0, 0 trying to move 1
+HI 1358 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (0,3). Heading  2 with a score of 0.
+HI 1473 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 0, 3 trying to move 2
+HI 1504 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 1, 3 trying to move 3
+HI 1536 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 1, 4 trying to move 0
+HI 1580 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (0,4). Heading  0 with a score of 0.
+HI 1907 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 0, 4 trying to move 0
+HI 1937 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 3, 1 trying to move 3
+HI 1968 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 3, 0 trying to move 2
+HI 2015 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (0,3). Heading  1 with a score of 0.
+HI 2336 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 0, 3 trying to move 1
+HI 2367 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 2, 0 trying to move 1
+HI 2399 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 1, 5 trying to move 0
+HI 2445 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (0,6). Heading  0 with a score of 0.
+HI 2801 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 0, 6 trying to move 0
+HI 2832 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 1, 0 trying to move 2
+HI 2864 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 1, 1 trying to move 0
+HI 2910 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (1,3). Heading  0 with a score of 0.
+HI 3172 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 1, 3 trying to move 0
+HI 3202 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 2, 3 trying to move 3
+HI 3233 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 2, 4 trying to move 0
+HI 3310 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (1,2). Heading  2 with a score of 0.
+HI 3747 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 1, 2 trying to move 2
+HI 3779 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 3, 4 trying to move 3
+HI 3810 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 2, 1 trying to move 0
+HI 3868 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (1,3). Heading  2 with a score of 0.
+HI 4181 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 1, 3 trying to move 2
+HI 4212 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 1, 6 trying to move 3
+HI 4243 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 2, 0 trying to move 2
+HI 4301 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (0,5). Heading  2 with a score of 0.
+HI 4607 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 0, 5 trying to move 2
+HI 4638 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 1, 0 trying to move 2
+HI 4669 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 2, 4 trying to move 1
+HI 4736 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (3,3). Heading  0 with a score of 0.
+HI 4916 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 3, 3 trying to move 0
+HI 4947 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 2, 2 trying to move 3
+HI 4978 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 3, 0 trying to move 3
+HI 5098 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (3,2). Heading  0 with a score of 0.
+HI 5703 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 3, 2 trying to move 0
+HI 5733 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 2, 5 trying to move 3
+HI 5765 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 1, 2 trying to move 3
+HI 5916 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (1,4). Heading  2 with a score of 0.
+HI 6972 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 1, 4 trying to move 2
+HI 7003 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 2, 1 trying to move 2
+HI 7034 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 3, 5 trying to move 3
+HI 7229 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (1,5). Heading  1 with a score of 0.
+HI 8462 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 1, 5 trying to move 1
+HI 8494 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 3, 4 trying to move 2
+HI 8525 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 1, 1 trying to move 1
+HI 8557 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (2,5). Heading  2 with a score of -2147483648.
+HI 8622 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (2,5). Heading  1 with a score of 0.
+HI 9081 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 2, 5 trying to move 1
+HI 9112 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 2, 2 trying to move 3
+HI 9143 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 2, 3 trying to move 2
+HI 9262 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (3,1). Heading  3 with a score of 0.
+HI 9890 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 3, 1 trying to move 3
+HI 9921 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 2, 4 trying to move 2
+HI 9953 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 2, 5 trying to move 0
+HI 10046 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (2,1). Heading  0 with a score of 0.
+HI 10511 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 2, 1 trying to move 0
+HI 10542 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 1, 2 trying to move 0
+HI 10573 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 0, 2 trying to move 2
+HI 10604 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (3,5). Heading  2 with a score of -2147483648.
+HI 10709 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (3,5). Heading  1 with a score of 0.
+HI 11059 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 3, 5 trying to move 1
+HI 11091 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 4, 1 trying to move 3
+HI 11122 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 2, 4 trying to move 3
+HI 11371 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (4,5). Heading  0 with a score of 0.
+HI 12480 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 4, 5 trying to move 0
+HI 12512 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 1, 1 trying to move 2
+HI 12543 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 3, 1 trying to move 1
+HI 12694 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (4,4). Heading  0 with a score of 0.
+HI 13307 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 4, 4 trying to move 0
+HI 13338 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 0, 3 trying to move 1
+HI 13370 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 1, 2 trying to move 1
+HI 13517 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (4,3). Heading  0 with a score of 0.
+HI 14106 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 4, 3 trying to move 0
+HI 14137 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 5, 3 trying to move 3
+HI 14169 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 4, 0 trying to move 3
+HI 14425 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (2,0). Heading  1 with a score of 0.
+HI 16519 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 2, 0 trying to move 1
+HI 16550 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 1, 4 trying to move 1
+HI 16581 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 1, 3 trying to move 2
+HI 16826 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (4,2). Heading  0 with a score of 0.
+HI 18311 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 4, 2 trying to move 0
+HI 18343 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 4, 3 trying to move 2
+HI 18374 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 2, 4 trying to move 2
+HI 18627 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (4,1). Heading  1 with a score of 0.
+HI 19470 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 4, 1 trying to move 1
+HI 19501 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 2, 2 trying to move 1
+HI 19533 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 2, 5 trying to move 1
+HI 19564 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (5,1). Heading  0 with a score of -2147483648.
+HI 19752 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (5,1). Heading  2 with a score of 0.
+HI 20493 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 5, 1 trying to move 2
+HI 20524 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 5, 0 trying to move 2
+HI 20555 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 3, 2 trying to move 3
+HI 20714 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (5,2). Heading  0 with a score of 0.
+HI 21222 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 5, 2 trying to move 0
+HI 21253 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 5, 4 trying to move 0
+HI 21284 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 5, 3 trying to move 2
+HI 21315 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (5,1). Heading  1 with a score of -2147483648.
+HI 21466 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (6,0). Heading  2 with a score of 0.
+HI 21866 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 6, 0 trying to move 2
+HI 21896 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 4, 4 trying to move 2
+HI 21927 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 3, 5 trying to move 3
+HI 22051 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (6,1). Heading  2 with a score of 0.
+HI 22321 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 6, 1 trying to move 2
+HI 22352 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 4, 5 trying to move 3
+HI 22384 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 5, 4 trying to move 3
+HI 22509 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (6,2). Heading  2 with a score of 0.
+HI 22831 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 6, 2 trying to move 2
+HI 22863 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 2, 2 trying to move 1
+HI 22894 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 4, 6 trying to move 0
+HI 23034 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (6,3). Heading  2 with a score of 0.
+HI 23304 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 6, 3 trying to move 2
+HI 23335 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 3, 2 trying to move 3
+HI 23367 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 2, 2 trying to move 0
+HI 23504 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (6,4). Heading  2 with a score of 0.
+HI 23690 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 6, 4 trying to move 2
+HI 23722 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 4, 5 trying to move 2
+HI 23753 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 4, 6 trying to move 0
+HI 23876 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (6,5). Heading  3 with a score of 0.
+HI 23936 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 6, 5 trying to move 3
+HI 23967 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 1, 4 trying to move 3
+HI 23998 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 3, 6 trying to move 1
+HI 24029 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (5,5). Heading  2 with a score of -2147483648.
+HI 24089 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (5,5). Heading  3 with a score of 0.
+HI 24090 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 5, 5 trying to move 3
+HI 24121 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 0, 4 trying to move 0
+HI 24152 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 4, 6 trying to move 3
+HI 24218 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (4,5). Heading  0 with a score of 0.
+HI 24307 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 4, 5 trying to move 0
+HI 24338 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 3, 5 trying to move 1
+HI 24370 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 2, 1 trying to move 0
+HI 24426 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (3,0). Heading  3 with a score of 0.
+HI 24467 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 3, 0 trying to move 3
+HI 24498 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 3, 6 trying to move 0
+HI 24530 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 3, 5 trying to move 0
+HI 24590 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (4,4). Heading  2 with a score of 0.
+HI 24624 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 4, 4 trying to move 2
+HI 24655 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 5, 6 trying to move 3
+HI 24686 [Game Runner] INFO  catsdogs.sim.GameEngine  - Dog at 0, 3 trying to move 1
+HI 24717 [Game Runner] INFO  catsdogs.g1.minimax.Mimimax  - current best move is (4,5). Heading  2 with a score of -2147483648.
+HI 24717 [Game Runner] INFO  catsdogs.sim.GameEngine  - Cat at 4, 5 trying to move 2
+HI 24717 [Game Runner] INFO  catsdogs.sim.GameEngine  - DOG WINS!
