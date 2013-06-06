@@ -2,7 +2,7 @@ package catsdogs.g1;
 
 import catsdogs.sim.Move;
 
-public class Group1Cat extends CatPlayer {
+public class Group1Cat extends catsdogs.sim.CatPlayer {
 	Evaluator evaluator = Settings.EVALUATOR;
 
 	@Override

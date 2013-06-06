@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 import org.apache.log4j.Logger;
 
-import catsdogs.g1.CatPlayer;
-import catsdogs.g1.DogPlayer;
 import catsdogs.g1.Evaluator;
 import catsdogs.g1.Settings;
 import catsdogs.sim.Cat;
+import catsdogs.sim.CatPlayer;
 import catsdogs.sim.Dog;
+import catsdogs.sim.DogPlayer;
 import catsdogs.sim.Move;
 import catsdogs.sim.PossibleMove;
 

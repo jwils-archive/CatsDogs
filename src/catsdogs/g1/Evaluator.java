@@ -1,7 +1,8 @@
 package catsdogs.g1;
 
+import catsdogs.sim.CatPlayer;
+import catsdogs.sim.DogPlayer;
 import catsdogs.sim.Move;
-import catsdogs.sim.Player;
 
 public abstract class Evaluator {
 	public static final int CAT = 1;

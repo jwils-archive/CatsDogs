@@ -13,7 +13,7 @@ import catsdogs.sim.PossibleMove;
 
 
 
-public class RandomCatPlayer extends catsdogs.sim.Player {
+public class RandomCatPlayer extends catsdogs.sim.CatPlayer {
 
 	private Logger logger = Logger.getLogger(this.getClass()); // for logging
 	
