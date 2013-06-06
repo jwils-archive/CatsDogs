@@ -1,5 +1,7 @@
 package catsdogs.g1;
 
+import javax.swing.border.Border;
+
 public class Board {
     private int[][] board;
     private int hashCode;
@@ -65,5 +67,66 @@ public class Board {
     		}
     	}
     	hashCode = hash;
+	}
+
+    private static int[][] rotateCW(int[][] board) {
+        int[][] rotatedArray = new int[board.length][board[0].length];
+        for (int i = 0; i < board[0].length; i++) {
+            for (int j = board.length - 1; j >= 0; j--) {
+                rotatedArray[i][j] = board[j][i];
+            }
+        }
+        return rotatedArray;
+    }
+    
+    private static int[][] reflect(int[][] board, int middle) {
+        int[][] reflectedArray = new int[board.length][board[0].length];
+        for (int i = 0; i < board[0].length; i++) {
+            for (int j = 0; j < board.length; j++) {
+            	reflectedArray[i][j] = board[board.length - i - 1][j];	
+            }
+        }
+        return reflectedArray;
+    }
+    
+    public static void main(String[] args) {
+    	int[][] testArray = new int[][]{
+    			{0,1,0,0,1,0,0},
+    			{0,0,2,2,0,1,0},
+    			{0,2,0,0,2,0,0},
+    			{0,1,0,2,0,0,0},
+    			{0,0,0,1,0,1,0},
+    			{1,0,0,0,1,0,2},
+    			{2,1,0,0,0,0,1}};
+    	printBoard(testArray);
+    			
+    	printBoard(testArray);
+    	
+    	System.out.println(new Board(testArray).hashCode());
+    	testArray = rotateCW(testArray);
+    	System.out.println(new Board(testArray).hashCode());
+    	testArray = rotateCW(testArray);
+    	System.out.println(new Board(testArray).hashCode());
+    	testArray = rotateCW(testArray);
+    	System.out.println(new Board(testArray).hashCode());
+    	testArray = reflect(testArray,3);
+
+    	System.out.println(new Board(testArray).hashCode());
+    	testArray = rotateCW(testArray);
+    	System.out.println(new Board(testArray).hashCode());
+    	testArray = rotateCW(testArray);
+    	System.out.println(new Board(testArray).hashCode());
+    	testArray = rotateCW(testArray);
+    	System.out.println(new Board(testArray).hashCode());
+    }
+    
+    public static void printBoard(int[][] board) {
+    	for (int i =0; i < 7;i++) {
+    		for(int j=0; j< 7; j++) {
+    			System.out.print(board[i][j] + " ");
+    		}
+    		System.out.println();
+    	}
+    	System.out.println();
     }
 }
