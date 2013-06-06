@@ -22,8 +22,19 @@ public class Board {
     	return hashCode;
     }
     
-    public boolean equals(Object obj) {
-		return false;
+    public boolean equals(Object obj) {	
+        int[][] normalBoard = ((Board)obj).getBoard();
+        int[][] reflectBoard = reflect(normalBoard);
+        int[][] thisBoard = this.board;
+        for(int i = 0; i < 4; i++){
+            thisBoard = rotateCW(thisBoard);
+            if (boardsEqual(thisBoard, normalBoard) || boardsEqual(thisBoard, reflectBoard)){
+                return true;
+            }       
+        }
+        
+        
+        return false;
     }
     
     private void setHashCode() {
@@ -79,7 +90,7 @@ public class Board {
         return rotatedArray;
     }
     
-    private static int[][] reflect(int[][] board, int middle) {
+    private static int[][] reflect(int[][] board) {
         int[][] reflectedArray = new int[board.length][board[0].length];
         for (int i = 0; i < board[0].length; i++) {
             for (int j = 0; j < board.length; j++) {
@@ -101,23 +112,32 @@ public class Board {
     	printBoard(testArray);
     			
     	printBoard(testArray);
+    	int[][] finalArray = testArray;
+    	for(int i = 0; i < 8; i++){
+    	    finalArray = reflect(finalArray);
+    	    
+    	}
+    	System.out.println(boardsEqual(finalArray, testArray));
     	
-    	System.out.println(new Board(testArray).hashCode());
-    	testArray = rotateCW(testArray);
-    	System.out.println(new Board(testArray).hashCode());
-    	testArray = rotateCW(testArray);
-    	System.out.println(new Board(testArray).hashCode());
-    	testArray = rotateCW(testArray);
-    	System.out.println(new Board(testArray).hashCode());
-    	testArray = reflect(testArray,3);
-
-    	System.out.println(new Board(testArray).hashCode());
-    	testArray = rotateCW(testArray);
-    	System.out.println(new Board(testArray).hashCode());
-    	testArray = rotateCW(testArray);
-    	System.out.println(new Board(testArray).hashCode());
-    	testArray = rotateCW(testArray);
-    	System.out.println(new Board(testArray).hashCode());
+    	Board b = new Board(testArray);
+    	
+//    	System.out.println(boardsEqual(finalArray, testArray));
+//    	System.out.println(new Board(testArray).equals(b));
+//    	testArray = rotateCW(testArray);
+//    	System.out.println(new Board(testArray).equals(b));
+//    	testArray = rotateCW(testArray);
+//    	System.out.println(new Board(testArray).equals(b));
+//    	testArray = rotateCW(testArray);
+//    	System.out.println(new Board(testArray).equals(b));
+//    	
+//    	testArray = reflect(testArray);
+//    	System.out.println(new Board(testArray).equals(b));
+//    	testArray = rotateCW(testArray);
+//    	System.out.println(new Board(testArray).equals(b));
+//    	testArray = rotateCW(testArray);
+//    	System.out.println(new Board(testArray).equals(b));
+//    	testArray = rotateCW(testArray);
+//    	System.out.println(new Board(testArray).equals(b));
     }
     
     public static void printBoard(int[][] board) {
@@ -132,7 +152,7 @@ public class Board {
 
     private static boolean boardsEqual(int [][] thisBoard, int [][] thatBoard) {
         for (int i = 0; i < thisBoard.length; i++) {
-            for (int j = 0; j < thisBoard[0].length; j++) {
+            for (int j = 0; j < thisBoard.length; j++) {
                 if (thisBoard[i][j] != thatBoard[i][j]){
                     return false;
                 }
