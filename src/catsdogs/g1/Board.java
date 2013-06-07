@@ -1,6 +1,5 @@
 package catsdogs.g1;
 
-import javax.swing.border.Border;
 
 public class Board {
     private int[][] board;
@@ -22,8 +21,19 @@ public class Board {
     	return hashCode;
     }
     
-    public boolean equals(Object obj) {
-		return false;
+    public boolean equals(Object obj) {	
+        int[][] normalBoard = ((Board)obj).getBoard();
+        int[][] reflectBoard = reflect(normalBoard);
+        int[][] thisBoard = this.board;
+        for(int i = 0; i < 4; i++){
+            if (boardsEqual(thisBoard, normalBoard) || boardsEqual(thisBoard, reflectBoard)){
+                return true;
+            }       
+            thisBoard = rotateCW(thisBoard);
+        }
+        
+        
+        return false;
     }
     
     private void setHashCode() {
@@ -79,11 +89,11 @@ public class Board {
         return rotatedArray;
     }
     
-    private static int[][] reflect(int[][] board, int middle) {
+    private static int[][] reflect(int[][] board) {
         int[][] reflectedArray = new int[board.length][board[0].length];
         for (int i = 0; i < board[0].length; i++) {
             for (int j = 0; j < board.length; j++) {
-            	reflectedArray[i][j] = board[board.length - i - 1][j];	
+            	reflectedArray[i][j] = board[board.length - j - 1][i];	
             }
         }
         return reflectedArray;
@@ -91,36 +101,36 @@ public class Board {
     
     public static void main(String[] args) {
     	int[][] testArray = new int[][]{
+    			{0,0,2,1,2,3,1},
     			{2,2,2,2,2,2,2},
     			{2,2,2,2,2,2,2},
+    			{3,2,1,2,1,2,2},
     			{2,2,2,2,2,2,2},
-    			{2,2,2,2,2,2,2},
-    			{2,2,2,2,2,2,2},
-    			{2,2,2,2,2,2,2},
-    			{2,2,2,2,2,2,2}
+    			{1,2,0,2,2,2,2},
+    			{2,2,0,2,1,2,3}
     	};
     	printBoard(testArray);
-    			
-    	printBoard(testArray);
+    	printBoard(rotateCW(rotateCW(testArray)));
     	
-    	System.out.println(Integer.MAX_VALUE);
     	
-    	System.out.println(new Board(testArray).hashCode());
+    	Board b = new Board(testArray);
+    	System.out.println(boardsEqual(testArray, rotateCW(rotateCW(testArray))));
+    	System.out.println(new Board(testArray).equals(b));
     	testArray = rotateCW(testArray);
-    	System.out.println(new Board(testArray).hashCode());
+    	System.out.println(new Board(testArray).equals(b));
     	testArray = rotateCW(testArray);
-    	System.out.println(new Board(testArray).hashCode());
+    	System.out.println(new Board(testArray).equals(b));
     	testArray = rotateCW(testArray);
-    	System.out.println(new Board(testArray).hashCode());
-    	testArray = reflect(testArray,3);
-
-    	System.out.println(new Board(testArray).hashCode());
+    	System.out.println(new Board(testArray).equals(b));
+    	
+    	testArray = reflect(testArray);
+    	System.out.println(new Board(testArray).equals(b));
     	testArray = rotateCW(testArray);
-    	System.out.println(new Board(testArray).hashCode());
+    	System.out.println(new Board(testArray).equals(b));
     	testArray = rotateCW(testArray);
-    	System.out.println(new Board(testArray).hashCode());
+    	System.out.println(new Board(testArray).equals(b));
     	testArray = rotateCW(testArray);
-    	System.out.println(new Board(testArray).hashCode());
+    	System.out.println(new Board(testArray).equals(b));
     }
     
     public static void printBoard(int[][] board) {
@@ -131,5 +141,17 @@ public class Board {
     		System.out.println();
     	}
     	System.out.println();
+    }
+
+    private static boolean boardsEqual(int [][] thisBoard, int [][] thatBoard) {
+        for (int i = 0; i < thisBoard.length; i++) {
+            for (int j = 0; j < thisBoard.length; j++) {
+                if (thisBoard[i][j] != thatBoard[i][j]){
+                    return false;
+                }
+            }
+        }
+        return true;
+
     }
 }
