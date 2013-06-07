@@ -83,7 +83,7 @@ public class Board {
         int[][] rotatedArray = new int[board.length][board[0].length];
         for (int i = 0; i < board[0].length; i++) {
             for (int j = board.length - 1; j >= 0; j--) {
-                rotatedArray[i][j] = board[j][i];
+                rotatedArray[i][j] = board[board.length -j- 1][i];
             }
         }
         return rotatedArray;
@@ -93,7 +93,7 @@ public class Board {
         int[][] reflectedArray = new int[board.length][board[0].length];
         for (int i = 0; i < board[0].length; i++) {
             for (int j = 0; j < board.length; j++) {
-            	reflectedArray[i][j] = board[board.length - j - 1][i];	
+            	reflectedArray[i][j] = board[i][board.length - j - 1];	
             }
         }
         return reflectedArray;
@@ -110,7 +110,7 @@ public class Board {
     			{2,2,0,2,1,2,3}
     	};
     	printBoard(testArray);
-    	printBoard(rotateCW(rotateCW(testArray)));
+    	printBoard(reflect(rotateCW(rotateCW(testArray))));
     	
     	
     	Board b = new Board(testArray);
