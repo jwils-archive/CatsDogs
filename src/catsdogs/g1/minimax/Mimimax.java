@@ -29,10 +29,6 @@ public class Mimimax extends Evaluator {
 	}
 	
 	private PossibleMoveWithScore evaluate(int[][] board , int player, int depth) {
-		if (depth == 0) {
-			return new PossibleMoveWithScore(USELESS_POSSIBLE_MOVE, 0); 		
-		}
-		
 		if (Cat.wins(board) || Dog.wins(board)) {
 			if (Dog.wins(board)) {
 				//We make a possible move as a place holder. This move should not be used.
@@ -40,6 +36,10 @@ public class Mimimax extends Evaluator {
 			} else {
 				return  new PossibleMoveWithScore(USELESS_POSSIBLE_MOVE, Integer.MAX_VALUE); //This can be changed to favor winning sooner.
 			}
+		}
+		
+		if (depth == 0) {
+			return new PossibleMoveWithScore(USELESS_POSSIBLE_MOVE, 0); 		
 		}
 		
 		

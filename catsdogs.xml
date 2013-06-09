@@ -6,7 +6,7 @@
 	
 <entry key="catsdogs.cat">catsdogs.g1.Group1Cat catsdogs.g0.RandomCatPlayer</entry>
 
-<entry key="catsdogs.dog">catsdogs.g0.RandomDogPlayer</entry>
+<entry key="catsdogs.dog">catsdogs.g1.Group1Dog catsdogs.g0.RandomDogPlayer</entry>
 	
 	
 </properties>

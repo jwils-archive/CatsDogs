@@ -2,9 +2,11 @@ package catsdogs.g1.minimax;
 
 public class MinimaxResult {
 	private int turnDepth;
-	private int score;
+	private double score;
+	private double score_max;
+	private double score_min;
 	
-	public MinimaxResult(int turnDepth, int score) {
+	public MinimaxResult(int turnDepth, double score) {
 		this.turnDepth = turnDepth;
 		this.score = score;
 	}
@@ -17,11 +19,11 @@ public class MinimaxResult {
 		this.turnDepth = turnDepth;
 	}
 
-	public int getScore() {
+	public double getScore() {
 		return score;
 	}
 
-	public void setScore(int score) {
+	public void setScore(double score) {
 		this.score = score;
 	}
 }

@@ -99,40 +99,6 @@ public class Board {
         return reflectedArray;
     }
     
-    public static void main(String[] args) {
-    	int[][] testArray = new int[][]{
-    			{0,0,2,1,2,3,1},
-    			{2,2,2,2,2,2,2},
-    			{2,2,2,2,2,2,2},
-    			{3,2,1,2,1,2,2},
-    			{2,2,2,2,2,2,2},
-    			{1,2,0,2,2,2,2},
-    			{2,2,0,2,1,2,3}
-    	};
-    	printBoard(testArray);
-    	printBoard(reflect(rotateCW(rotateCW(testArray))));
-    	
-    	
-    	Board b = new Board(testArray);
-    	System.out.println(boardsEqual(testArray, rotateCW(rotateCW(testArray))));
-    	System.out.println(new Board(testArray).equals(b));
-    	testArray = rotateCW(testArray);
-    	System.out.println(new Board(testArray).equals(b));
-    	testArray = rotateCW(testArray);
-    	System.out.println(new Board(testArray).equals(b));
-    	testArray = rotateCW(testArray);
-    	System.out.println(new Board(testArray).equals(b));
-    	
-    	testArray = reflect(testArray);
-    	System.out.println(new Board(testArray).equals(b));
-    	testArray = rotateCW(testArray);
-    	System.out.println(new Board(testArray).equals(b));
-    	testArray = rotateCW(testArray);
-    	System.out.println(new Board(testArray).equals(b));
-    	testArray = rotateCW(testArray);
-    	System.out.println(new Board(testArray).equals(b));
-    }
-    
     public static void printBoard(int[][] board) {
     	for (int i =0; i < 7;i++) {
     		for(int j=0; j< 7; j++) {
