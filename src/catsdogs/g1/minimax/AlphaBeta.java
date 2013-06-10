@@ -28,13 +28,12 @@ public class AlphaBeta extends Evaluator {
 	@Override
 	public Move evaluate(int[][] board, int playerMove) {
 		 cache = new CachedBoards();
-		alpha_beta(board,6, Double.MIN_VALUE, Double.MAX_VALUE, playerMove);
+		alpha_beta(board,5, Double.MIN_VALUE/2, Double.MAX_VALUE/2, playerMove);
 		ArrayList<PossibleMove> moves = getMoves(board, playerMove);
 		double score = Double.MIN_VALUE;
 		Move toMove = null;
 		for (PossibleMove move : moves) {
-			MinimaxResult result = cache.getResult(move.getBoard(), 5);
-			logger.error(result.getScore());
+			MinimaxResult result = cache.getResult(move.getBoard(), 4);
 			if( toMove == null || result.getScore() > score) {
 				score = result.getScore();
 				toMove = move;
@@ -50,14 +49,14 @@ public class AlphaBeta extends Evaluator {
 		if (Cat.wins(board) || Dog.wins(board)) {
 			if (Cat.wins(board) && player > CAT || Dog.wins(board) && player == CAT) {
 				//We make a possible move as a place holder. This move should not be used.
-				return  Double.MIN_VALUE; //This only works for cats.
+				return  Double.MIN_VALUE/2; //This only works for cats.
 			} else {
-				return Double.MAX_VALUE; //This can be changed to favor winning sooner.
+				return Double.MAX_VALUE/2; //This can be changed to favor winning sooner.
 			}
 		}
 		
 		if (depth == 0) {
-			return  0; //heuristic.evaluate(board, player); 		
+			return heuristic.evaluate(board, player); 		
 		}
 		
 		
@@ -69,12 +68,7 @@ public class AlphaBeta extends Evaluator {
 			if (result != null) {
 				tmp_val = result.getScore();
 			} else{
-				if (player == DOG1) {
-					tmp_val = alpha_beta(move.getBoard(), depth -1, alpha, beta, nextPlayer(player));
-				} else {
 					tmp_val = -alpha_beta(move.getBoard(), depth -1, -beta, -alpha, nextPlayer(player));
-
-				}
 			}
 			
 			cache.setResult(new Board(move.getBoard()), new MinimaxResult(depth - 1, tmp_val));
@@ -94,7 +88,13 @@ public class AlphaBeta extends Evaluator {
 	private ArrayList<PossibleMove> getMoves(int[][] board, int player) {
 		if (player == CAT) {
 			return Cat.allLegalMoves(board);
-		} else if (player == DOG1 || player == DOG2) {
+		} else if (player == DOG1) {
+			ArrayList<PossibleMove> moves = new ArrayList<PossibleMove>();
+			for (PossibleMove move : Dog.allLegalMoves(board)) {
+				moves.addAll(Dog.allLegalMoves(move.getBoard()));
+			}
+			return moves;
+		} else if(player == DOG2) {
 			return Dog.allLegalMoves(board);
 		} else {
 			return null;
@@ -107,7 +107,8 @@ public class AlphaBeta extends Evaluator {
 		if (player == CAT) {
 			return DOG1;
 		}else if (player == DOG1) {
-			return DOG2;
+			//return DOG2;
+			return CAT;
 		} else if (player == DOG2) {
 			return CAT;
 		} else {

@@ -31,8 +31,6 @@ public class Board {
             }       
             thisBoard = rotateCW(thisBoard);
         }
-        
-        
         return false;
     }
     
