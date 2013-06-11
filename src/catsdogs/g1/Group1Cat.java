@@ -1,5 +1,6 @@
 package catsdogs.g1;
 
+import catsdogs.g1.heuristic.CatCanMakeLosingMoveHeuristic;
 import catsdogs.g1.heuristic.TwoInARowHeuristic;
 import catsdogs.sim.Move;
 
@@ -20,7 +21,7 @@ public class Group1Cat extends catsdogs.sim.CatPlayer {
 
 	@Override
 	public Move doMove(int[][] board) {
-	        TwoInARowHeuristic h = new TwoInARowHeuristic();
+	        CatCanMakeLosingMoveHeuristic h = new CatCanMakeLosingMoveHeuristic();
 	        h.evaluate(board, 1);
 	        return evaluator.evaluate(board, Evaluator.CAT);
 	}

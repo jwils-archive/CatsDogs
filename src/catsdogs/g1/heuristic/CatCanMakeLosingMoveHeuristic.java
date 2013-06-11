@@ -20,7 +20,7 @@ public class CatCanMakeLosingMoveHeuristic extends Heuristic {
                         possibleLosingMoves++;
                     }
                 }
-                if (board[x][y] == Board.CAT && y < 6 && board[x][y-1] == Board.EMPTY) {
+                if (board[x][y] == Board.CAT && y < 6 && board[x][y+1] == Board.EMPTY) {
                     int [][] moveUpBoard = board;
                     moveUpBoard[x][y] = Board.EMPTY;
                     moveUpBoard[x][y+1] = Board.CAT;
@@ -39,7 +39,7 @@ public class CatCanMakeLosingMoveHeuristic extends Heuristic {
                 if (board[x][y] == Board.CAT && x > 0 && board[x-1][y] ==  Board.EMPTY) {
                     int [][] moveLeftBoard = board;
                     moveLeftBoard[x][y] = Board.EMPTY;
-                    moveLeftBoard[x][y+1] = Board.CAT;
+                    moveLeftBoard[x-1][y] = Board.CAT;
                     if (Dog.wins(moveLeftBoard)){
                         possibleLosingMoves++;
                     }
