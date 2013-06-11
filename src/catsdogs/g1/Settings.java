@@ -5,7 +5,7 @@ import catsdogs.g1.minimax.Mimimax;
 
 public class Settings {
 	public static int MAX_MINIMAX_DEPTH = 5;
-	public static int MAX_ALPHABETA_DEPTH = 5;
+	public static int MAX_ALPHABETA_DEPTH = 4;
 	public static Evaluator EVALUATOR = new AlphaBeta(null, null);
 
 }
