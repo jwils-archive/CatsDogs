@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 
 import catsdogs.g1.Board;
 import catsdogs.g1.Evaluator;
+import catsdogs.g1.Settings;
 import catsdogs.g1.heuristic.*;
 import catsdogs.sim.Cat;
 import catsdogs.sim.CatPlayer;
@@ -30,7 +31,7 @@ public class AlphaBeta extends Evaluator {
 
 	@Override
 	public Move evaluate(int[][] board, int playerMove) {
-		alpha_beta(board,5, LOSS_VALUE, WIN_VALUE, playerMove);
+		alpha_beta(board,Settings.MAX_MINIMAX_DEPTH, LOSS_VALUE, WIN_VALUE, playerMove);
 		ArrayList<PossibleMove> moves = getMoves(board, playerMove);
 		double score = Double.MIN_VALUE;
 		Move toMove = null;
