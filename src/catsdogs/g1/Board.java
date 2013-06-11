@@ -1,8 +1,12 @@
 package catsdogs.g1;
 
 
-public class Board {
-    private int[][] board;
+public class Board implements java.io.Serializable {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private int[][] board;
     private int hashCode;
     
     public Board(int[][] board){

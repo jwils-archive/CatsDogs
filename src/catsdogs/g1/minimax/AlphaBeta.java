@@ -18,6 +18,9 @@ public class AlphaBeta extends Evaluator {
     CachedBoards cache = new CachedBoards();
     private Logger logger = Logger.getLogger(this.getClass()); // for logging
     Heuristic heuristic = new OpenSquaresAroundCatHeuristic();
+    
+    private static double WIN_VALUE = Double.MAX_VALUE/2;
+    private static double LOSS_VALUE = Double.MIN_VALUE/2;
 
     
 	public AlphaBeta(CatPlayer cat, DogPlayer dog) {
@@ -27,19 +30,21 @@ public class AlphaBeta extends Evaluator {
 
 	@Override
 	public Move evaluate(int[][] board, int playerMove) {
-		 cache = new CachedBoards();
-		alpha_beta(board,5, Double.MIN_VALUE/2, Double.MAX_VALUE/2, playerMove);
+		alpha_beta(board,5, LOSS_VALUE, WIN_VALUE, playerMove);
 		ArrayList<PossibleMove> moves = getMoves(board, playerMove);
 		double score = Double.MIN_VALUE;
 		Move toMove = null;
 		for (PossibleMove move : moves) {
 			MinimaxResult result = cache.getResult(move.getBoard(), 4);
-			if( toMove == null || result.getScore() > score) {
+			if( toMove == null || (result != null && result.getScore() > score)) {
+				logger.error(result.getScore());
 				score = result.getScore();
 				toMove = move;
 				
 			}
 		}
+		
+		//cache.writeToFile();
 		return toMove;
 	}
 
@@ -61,6 +66,7 @@ public class AlphaBeta extends Evaluator {
 		
 		
 		ArrayList<PossibleMove> moves = getMoves(board, player);
+		//cache.orderMoves(moves);
 		
 		for (PossibleMove move : moves) {
 			MinimaxResult result = cache.getResult(move.getBoard(), depth -1);
@@ -68,7 +74,11 @@ public class AlphaBeta extends Evaluator {
 			if (result != null) {
 				tmp_val = result.getScore();
 			} else{
+				if (player == DOG1) {
+					tmp_val = alpha_beta(move.getBoard(), depth -1, alpha, beta, nextPlayer(player));
+				} else {
 					tmp_val = -alpha_beta(move.getBoard(), depth -1, -beta, -alpha, nextPlayer(player));
+				}
 			}
 			
 			cache.setResult(new Board(move.getBoard()), new MinimaxResult(depth - 1, tmp_val));
@@ -89,11 +99,12 @@ public class AlphaBeta extends Evaluator {
 		if (player == CAT) {
 			return Cat.allLegalMoves(board);
 		} else if (player == DOG1) {
-			ArrayList<PossibleMove> moves = new ArrayList<PossibleMove>();
-			for (PossibleMove move : Dog.allLegalMoves(board)) {
-				moves.addAll(Dog.allLegalMoves(move.getBoard()));
-			}
-			return moves;
+//			ArrayList<PossibleMove> moves = new ArrayList<PossibleMove>();
+//			for (PossibleMove move : Dog.allLegalMoves(board)) {
+//				moves.addAll(Dog.allLegalMoves(move.getBoard()));
+//			}
+//			return moves;
+			return Dog.allLegalMoves(board);
 		} else if(player == DOG2) {
 			return Dog.allLegalMoves(board);
 		} else {
@@ -107,8 +118,8 @@ public class AlphaBeta extends Evaluator {
 		if (player == CAT) {
 			return DOG1;
 		}else if (player == DOG1) {
-			//return DOG2;
-			return CAT;
+			return DOG2;
+			//return CAT;
 		} else if (player == DOG2) {
 			return CAT;
 		} else {
