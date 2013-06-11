@@ -20,8 +20,8 @@ public class Group1Cat extends catsdogs.sim.CatPlayer {
 
 	@Override
 	public Move doMove(int[][] board) {
-//	        TwoInARowHeuristic h = new TwoInARowHeuristic();
-//	        h.evaluate(board, 0);
+	        TwoInARowHeuristic h = new TwoInARowHeuristic();
+	        h.evaluate(board, 1);
 	        return evaluator.evaluate(board, Evaluator.CAT);
 	}
 

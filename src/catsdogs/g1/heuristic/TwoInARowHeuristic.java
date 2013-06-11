@@ -9,7 +9,7 @@ public class TwoInARowHeuristic extends Heuristic {
     @Override
     public double evaluate(int[][] board, int playerMove) {
         final int catCount = 5;
-        int cats = 0;
+        double cats = 0;
         for (int x = 0; x < Board.X; x++) {
             int count = 0;
             for (int y = 0; y < Board.Y; y++) {
@@ -17,6 +17,7 @@ public class TwoInARowHeuristic extends Heuristic {
                     count++;
                 if (count == 2) {
                     cats++;
+                    break;
                 }
             }
         }
@@ -27,17 +28,18 @@ public class TwoInARowHeuristic extends Heuristic {
                     count++;
                 if (count == 2) {
                     cats++;
+                    break;
                 }
             }
         }
         //not sure this is correct, should this heuristic return a negative value when cats are 2 in a row for a cat?
         if (playerMove == CAT) {
-            double hValueCat = -(double) catCount / (cats + catCount);
-            logger.info("Cat TwoInARowHeuristic value is " + hValueCat);
+            double hValueCat = (double)cats;
+            logger.info("There are " + hValueCat + " rows and columns that contain 2 or more cats");
             return hValueCat;
         } else {
-            double hValueDog = -(double) catCount / (cats + catCount);
-            logger.info("Dog TwoInARowHeuristic value is " + hValueDog);
+            double hValueDog = -(double)cats;
+            logger.info("There are " + Math.abs(hValueDog) + " rows and columns that contain 2 or more cats");
             return hValueDog;
         }
     }
