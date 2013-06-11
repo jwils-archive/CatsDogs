@@ -50,11 +50,9 @@ public class CatCanMakeLosingMoveHeuristic extends Heuristic {
         }
         if (playerMove == CAT) {
             double hValueCat = (double)possibleLosingMoves;
-            logger.info("There are " + hValueCat + " moves that result in the dog winning");
             return hValueCat;
         } else {
             double hValueDog = -(double)possibleLosingMoves;
-            logger.info("There are " + Math.abs(hValueDog) + " moves that result in the dog winning");
             return hValueDog;
         }
     }

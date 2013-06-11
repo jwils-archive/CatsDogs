@@ -35,11 +35,9 @@ public class TwoInARowHeuristic extends Heuristic {
         //not sure this is correct, should this heuristic return a negative value when cats are 2 in a row for a cat?
         if (playerMove == CAT) {
             double hValueCat = (double)cats;
-            logger.info("There are " + hValueCat + " rows and columns that contain 2 or more cats");
             return hValueCat;
         } else {
             double hValueDog = -(double)cats;
-            logger.info("There are " + Math.abs(hValueDog) + " rows and columns that contain 2 or more cats");
             return hValueDog;
         }
     }

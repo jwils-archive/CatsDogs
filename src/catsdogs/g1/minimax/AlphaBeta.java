@@ -1,6 +1,7 @@
 package catsdogs.g1.minimax;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import org.apache.log4j.Logger;
 
@@ -18,7 +19,10 @@ import catsdogs.sim.PossibleMove;
 public class AlphaBeta extends Evaluator {
     CachedBoards cache = new CachedBoards();
     private Logger logger = Logger.getLogger(this.getClass()); // for logging
-    Heuristic heuristic = new OpenSquaresAroundCatHeuristic();
+    Heuristic heuristic = new CompositeHeuristic();
+	private int turn = 0;
+	int MAX_DEPTH = 5;
+
     
     private static double WIN_VALUE = Double.MAX_VALUE/2;
     private static double LOSS_VALUE = Double.MIN_VALUE/2;
@@ -31,15 +35,30 @@ public class AlphaBeta extends Evaluator {
 
 	@Override
 	public Move evaluate(int[][] board, int playerMove) {
-		alpha_beta(board,Settings.MAX_MINIMAX_DEPTH, LOSS_VALUE, WIN_VALUE, playerMove);
+		
+		
+		if (playerMove == CAT || turn > 60) {
+			logger.error(turn);
+			MAX_DEPTH = Settings.MAX_MINIMAX_DEPTH;
+			heuristic = new CompositeHeuristic();
+			alpha_beta(board,Settings.MAX_MINIMAX_DEPTH, LOSS_VALUE, WIN_VALUE, playerMove);
+		} else {
+			//heuristic = null;
+			turn++;
+			MAX_DEPTH = Settings.MAX_MINIMAX_DEPTH - 1;
+			alpha_beta(board,Settings.MAX_MINIMAX_DEPTH - 1, LOSS_VALUE, WIN_VALUE, playerMove);
+
+		}
 		ArrayList<PossibleMove> moves = getMoves(board, playerMove);
 		double score = Double.MIN_VALUE;
 		Move toMove = null;
+		Collections.shuffle(moves);
 		for (PossibleMove move : moves) {
-			MinimaxResult result = cache.getResult(move.getBoard(), 4);
+			MinimaxResult result = cache.getResult(move.getBoard());
 			if( toMove == null || (result != null && result.getScore() > score)) {
-				logger.error(result.getScore());
-				score = result.getScore();
+				if(result != null) {
+					score = result.getScore();
+				}
 				toMove = move;
 				
 			}
@@ -53,7 +72,7 @@ public class AlphaBeta extends Evaluator {
 		//terminal check
 		
 		if (Cat.wins(board) || Dog.wins(board)) {
-			if (Cat.wins(board) && player > CAT || Dog.wins(board) && player == CAT) {
+			if ((Cat.wins(board) && player > CAT) || (Dog.wins(board) && player == CAT)) {
 				//We make a possible move as a place holder. This move should not be used.
 				return  Double.MIN_VALUE/2; //This only works for cats.
 			} else {
@@ -62,15 +81,19 @@ public class AlphaBeta extends Evaluator {
 		}
 		
 		if (depth == 0) {
-			return heuristic.evaluate(board, player); 		
-		}
+			if (heuristic != null) {
+				return heuristic.evaluate(board, player); 
+			} else {
+				return 0;
+			}
+		} 
 		
 		
 		ArrayList<PossibleMove> moves = getMoves(board, player);
 		//cache.orderMoves(moves);
 		
 		for (PossibleMove move : moves) {
-			MinimaxResult result = cache.getResult(move.getBoard(), depth -1);
+			MinimaxResult result = null; //cache.getResult(move.getBoard(), depth -1);
 			double tmp_val;
 			if (result != null) {
 				tmp_val = result.getScore();
@@ -81,8 +104,9 @@ public class AlphaBeta extends Evaluator {
 					tmp_val = -alpha_beta(move.getBoard(), depth -1, -beta, -alpha, nextPlayer(player));
 				}
 			}
-			
-			cache.setResult(new Board(move.getBoard()), new MinimaxResult(depth - 1, tmp_val));
+			if (depth >= MAX_DEPTH - 1) {
+				cache.setResult(new Board(move.getBoard()), new MinimaxResult(depth - 1, tmp_val));
+			}
 			
 			if (tmp_val >= beta)
 				return tmp_val;
