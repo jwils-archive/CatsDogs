@@ -22,7 +22,8 @@ public class Group1Cat extends catsdogs.sim.CatPlayer {
 	@Override
 	public Move doMove(int[][] board) {
 	        CatCanMakeLosingMoveHeuristic h = new CatCanMakeLosingMoveHeuristic();
-	        h.evaluate(board, 1);
+	        int[][] boardCopy = board;
+	        h.evaluate(boardCopy, 1);
 	        return evaluator.evaluate(board, Evaluator.CAT);
 	}
 
