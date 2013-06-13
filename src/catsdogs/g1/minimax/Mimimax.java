@@ -18,10 +18,6 @@ public class Mimimax extends Evaluator {
         private static PossibleMove USELESS_POSSIBLE_MOVE = new PossibleMove(0,0,Integer.MIN_VALUE,null);
 	//Make 3 players Cat DOg1 dog2.
 
-	public Mimimax(CatPlayer cat, DogPlayer dog) {
-		super(cat, dog);
-	}
-
 	@Override
 	public Move evaluate(int[][] board, int player) {
 		//If we are given a board with a game that is already over this will not return a valid move.
@@ -100,5 +96,11 @@ public class Mimimax extends Evaluator {
 		}
 		
 		return worstMove;
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
 	}
 }

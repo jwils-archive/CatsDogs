@@ -12,10 +12,6 @@ public class NegaScout extends Evaluator {
 	 private static PossibleMove USELESS_POSSIBLE_MOVE = new PossibleMove(0,0,Integer.MIN_VALUE,null);
 	 
 
-	public NegaScout(CatPlayer cat, DogPlayer dog) {
-		super(cat, dog);
-		// TODO Auto-generated constructor stub
-	}
 
 	@Override
 	public Move evaluate(int[][] board, int playerMove) {
@@ -70,5 +66,11 @@ public class NegaScout extends Evaluator {
 	
 	private double getScore(int[][] board, int player) {
 		return 0;
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
 	}
 }
