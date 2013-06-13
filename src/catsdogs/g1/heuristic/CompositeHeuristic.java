@@ -35,8 +35,8 @@ public class CompositeHeuristic extends Heuristic {
 	private void createHeuristics() {
 		heuristics = new HashMap<Heuristic,Double>();
 		heuristics.put(new OpenSquaresAroundCatHeuristic(), 100.00);
-		heuristics.put(new TwoInARowHeuristic(), -5.00);
-		heuristics.put(new CatCanMakeLosingMoveHeuristic(), 5.00);
+		//heuristics.put(new TwoInARowHeuristic(), -5.00);
+		//heuristics.put(new CatCanMakeLosingMoveHeuristic(), 5.00);
 		//add all heuristics and scores here
 	}
 }
