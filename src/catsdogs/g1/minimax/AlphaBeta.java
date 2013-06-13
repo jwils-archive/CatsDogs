@@ -44,7 +44,7 @@ public class AlphaBeta extends Evaluator {
 
 	public double alpha_beta(int[][] board, int depth, double alpha, double beta, int player) {
 		//terminal check
-		if (player == CAT && (Cat.wins(board) || Dog.wins(board))) {
+		if ((Cat.wins(board) || Dog.wins(board))) {
 			if ((Cat.wins(board) && player > CAT) || (Dog.wins(board) && player == CAT)) {
 				//We make a possible move as a place holder. This move should not be used.
 				return  Double.MIN_VALUE/2; //This only works for cats.
