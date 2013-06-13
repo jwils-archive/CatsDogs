@@ -11,10 +11,18 @@ public class Group1Dog extends catsdogs.sim.DogPlayer {
 
 	@Override
 	public Move doMove1(int[][] board) {
-		Evaluator evaluator = new AlphaBeta(board, AlphaBeta.DOG1);
-		evaluator.evaluate(board, 2);
-		move = (DogMove)evaluator.getBestMove();
-		return move.getFirstMove();
+            Evaluator evaluator = new AlphaBeta(board, Evaluator.DOG1);
+            Thread thread = new Thread(evaluator);
+            thread.start();
+            try {
+            thread.join((long) (4.5 * 1000));
+            thread.interrupt();
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        move = (DogMove) evaluator.getBestMove();    
+        return move.getFirstMove();
 	}
 
 	@Override

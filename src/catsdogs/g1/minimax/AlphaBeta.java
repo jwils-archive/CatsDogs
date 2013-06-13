@@ -38,7 +38,6 @@ public class AlphaBeta extends Evaluator {
 	@Override
 	public Move evaluate(int[][] board, int playerMove) {
 		alpha_beta(board, max_depth, LOSS_VALUE - 10000, WIN_VALUE + 10000, playerMove);
-
 		return bestMove;
 	}
 
@@ -122,7 +121,6 @@ public class AlphaBeta extends Evaluator {
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
-		
+		evaluate(board, playerToMove);		
 	}
 }

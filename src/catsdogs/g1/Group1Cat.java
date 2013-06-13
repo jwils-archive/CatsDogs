@@ -25,11 +25,18 @@ public class Group1Cat extends catsdogs.sim.CatPlayer {
 
 	@Override
 	public Move doMove(int[][] board) {
-		Evaluator evaluator = new AlphaBeta(board, Evaluator.CAT);
-		evaluator.evaluate(board, Evaluator.CAT);
-		logger.error(evaluator.getBestMove());
+	        Evaluator evaluator = new AlphaBeta(board, Evaluator.CAT);
+	        Thread thread = new Thread(evaluator);
+		thread.start();
+		try {
+                thread.join((long) (4.5 * 1000));
+                thread.interrupt();
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+    		
 	    return evaluator.getBestMove();
-//http://stackoverflow.com/questions/4252187/how-to-stop-execution-after-a-certain-time-in-java
 	       
 	}
 
