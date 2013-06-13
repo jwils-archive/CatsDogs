@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.apache.log4j.Logger;
 
 import catsdogs.g1.Evaluator;
+import catsdogs.g1.heuristic.CompositeHeuristic;
 import catsdogs.g1.heuristic.Heuristic;
 import catsdogs.sim.Cat;
 import catsdogs.sim.Dog;
@@ -14,7 +15,7 @@ import catsdogs.sim.PossibleMove;
 public class AlphaBeta extends Evaluator {
     //CachedBoards cache = new CachedBoards();
     private Logger logger = Logger.getLogger(this.getClass()); // for logging
-    Heuristic heuristic = null; //new CompositeHeuristic();
+    Heuristic heuristic = new CompositeHeuristic();
     
 	private int max_depth = 4;
 	
@@ -80,6 +81,12 @@ public class AlphaBeta extends Evaluator {
 				}
 				alpha = tmp_val;
 			}
+			
+			if (depth == max_depth && tmp_val == alpha) {
+				if(Math.random() < 0.5) {
+					bestMove = move;
+				}
+			}
 		}
 		
 		return alpha;
@@ -120,7 +127,8 @@ public class AlphaBeta extends Evaluator {
 
 	@Override
 	public void run() {
-		while(!testing) {
+		double startTime = System.currentTimeMillis();
+		while(!testing && System.currentTimeMillis() - startTime < 1.25 * 1000L) {
 			evaluate(board, playerToMove);
 			max_depth++;
 		}
