@@ -1,5 +1,7 @@
 package catsdogs.g1.minimax;
 
+import catsdogs.sim.Cat;
+import catsdogs.sim.Dog;
 import catsdogs.sim.PossibleMove;
 
 public class DogMove extends PossibleMove {
@@ -11,7 +13,7 @@ public class DogMove extends PossibleMove {
 	private PossibleMove firstMove;
 	
 	public void setFirstMove(PossibleMove dogmove) {
-		firstMove = dogmove;
+			firstMove = dogmove;
 	}
 	
 	public PossibleMove getFirstMove() {
