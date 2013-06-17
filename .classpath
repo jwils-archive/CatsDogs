@@ -10,5 +10,6 @@
 	<classpathentry kind="lib" path="xml-apis.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="je-5.0.73.jar"/>
+	<classpathentry kind="lib" path="/Users/jwils/Downloads/players13June.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

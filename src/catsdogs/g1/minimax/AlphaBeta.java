@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 import catsdogs.g1.Evaluator;
 import catsdogs.g1.heuristic.CompositeHeuristic;
 import catsdogs.g1.heuristic.Heuristic;
+import catsdogs.g1.heuristic.OpenSquaresAroundCatHeuristic;
 import catsdogs.sim.Cat;
 import catsdogs.sim.Dog;
 import catsdogs.sim.Move;
@@ -15,9 +16,9 @@ import catsdogs.sim.PossibleMove;
 public class AlphaBeta extends Evaluator {
     //CachedBoards cache = new CachedBoards();
     private Logger logger = Logger.getLogger(this.getClass()); // for logging
-    Heuristic heuristic = new CompositeHeuristic();
+    Heuristic heuristic = new CompositeHeuristic(); //new OpenSquaresAroundCatHeuristic();
     
-	private int max_depth = 4;
+	private int max_depth = 2;
 	
 	private boolean testing = false;
 	
@@ -25,7 +26,7 @@ public class AlphaBeta extends Evaluator {
 	int playerToMove;
     
     private static double WIN_VALUE = Double.MAX_VALUE/2;
-    private static double LOSS_VALUE = Double.MIN_VALUE/2;
+    private static double LOSS_VALUE = -1*Double.MAX_VALUE/2;
 
     
 	public AlphaBeta(int[][] board, int playerMove) {
@@ -35,7 +36,7 @@ public class AlphaBeta extends Evaluator {
 
 	@Override
 	public Move evaluate(int[][] board, int playerMove) {
-		alpha_beta(board, max_depth, LOSS_VALUE - 10000, WIN_VALUE + 10000, playerMove);
+		logger.error(alpha_beta(board, max_depth, LOSS_VALUE - 10000, WIN_VALUE + 10000, playerMove));
 		return bestMove;
 	}
 
@@ -44,9 +45,9 @@ public class AlphaBeta extends Evaluator {
 		if ((Cat.wins(board) || Dog.wins(board))) {
 			if ((Cat.wins(board) && player > CAT) || (Dog.wins(board) && player == CAT)) {
 				//We make a possible move as a place holder. This move should not be used.
-				return  Double.MIN_VALUE/2; //This only works for cats.
+				return  LOSS_VALUE; //This only works for cats.
 			} else {
-				return Double.MAX_VALUE/2; //This can be changed to favor winning sooner.
+				return WIN_VALUE; //This can be changed to favor winning sooner.
 			}
 		}
 
@@ -60,6 +61,7 @@ public class AlphaBeta extends Evaluator {
 		
 		ArrayList<PossibleMove> moves = getMoves(board, player);
 		if (bestMove != null && depth == max_depth) {
+			moves.remove(bestMove);
 			moves.add(0, (PossibleMove) bestMove);
 		}
 		for (PossibleMove move : moves) {

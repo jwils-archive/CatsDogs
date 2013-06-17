@@ -1,20 +1,21 @@
 package catsdogs.g1;
 
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.ArrayList;
+import java.util.Random;
 
 import org.apache.log4j.Logger;
 
 import catsdogs.g1.minimax.AlphaBeta;
-import catsdogs.g1.minimax.DogMove;
+import catsdogs.sim.Cat;
 import catsdogs.sim.Move;
+import catsdogs.sim.PossibleMove;
 
 public class Group1Cat extends catsdogs.sim.CatPlayer {
 	private Logger logger = Logger.getLogger(this.getClass()); // for logging
 	@Override
 	public String getName() {
 		// TODO Auto-generated method stub
-		return "Group 1 Cat";
+		return "Group 1 Cat final";
 	}
 
 	@Override
@@ -36,8 +37,20 @@ public class Group1Cat extends catsdogs.sim.CatPlayer {
                 e.printStackTrace();
             }
     		
+		if (evaluator.getBestMove() == null) {
+			return randomMove(board);
+		}
 	    return evaluator.getBestMove();
 	       
+	}
+	
+	public Move randomMove(int[][] board) {
+		ArrayList<PossibleMove> moves = Cat.allLegalMoves(board);
+		Random r = new Random();
+		int size = moves.size();
+		int which = r.nextInt(size);
+		
+		return moves.get(which);
 	}
 
 }
