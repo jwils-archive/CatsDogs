@@ -5,6 +5,7 @@ import java.util.Arrays;
 import org.apache.log4j.Logger;
 
 import catsdogs.sim.Board;
+import catsdogs.sim.Cat;
 import catsdogs.sim.Dog;
 
 public class CatCanMakeLosingMoveHeuristic extends Heuristic {
@@ -49,10 +50,10 @@ public class CatCanMakeLosingMoveHeuristic extends Heuristic {
             }
         }
         if (playerMove == CAT) {
-            double hValueCat = (double)possibleLosingMoves;
+            double hValueCat = (double)possibleLosingMoves/Cat.allLegalMoves(board).size();
             return hValueCat;
         } else {
-            double hValueDog = -(double)possibleLosingMoves;
+            double hValueDog = -(double)possibleLosingMoves/Cat.allLegalMoves(board).size();
             return hValueDog;
         }
     }

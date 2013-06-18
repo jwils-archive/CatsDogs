@@ -44,9 +44,9 @@ public class OpenSquaresAroundCatHeuristic extends Heuristic {
 			}
 		}
 		if (playerMove == CAT) {
-			return (double)empty/(dogs + empty);
+			return (double)(empty - 5)/(dogs + empty);
 		} else {
-			return -(double)empty/(dogs + empty); 
+			return -(double)(empty - 5)/(dogs + empty); 
 		}
 	}
 
